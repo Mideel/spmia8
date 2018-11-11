@@ -33,7 +33,7 @@ import java.util.List;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class Application {
 
     @Autowired
