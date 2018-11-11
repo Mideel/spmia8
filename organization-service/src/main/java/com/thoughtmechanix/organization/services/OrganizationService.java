@@ -17,7 +17,7 @@ public class OrganizationService {
     SimpleSourceBean simpleSourceBean;
 
     public Organization getOrg(String organizationId) {
-        return orgRepository.findById(organizationId);
+        return orgRepository.findById(organizationId).orElse(null);
     }
 
     public void saveOrg(Organization org){
@@ -34,7 +34,7 @@ public class OrganizationService {
     }
 
     public void deleteOrg(String  orgId){
-        orgRepository.delete( orgId );
+        orgRepository.deleteById( orgId );
         simpleSourceBean.publishOrgChange("DELETE", orgId);
     }
 }
