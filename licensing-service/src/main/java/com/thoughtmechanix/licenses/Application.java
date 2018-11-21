@@ -58,6 +58,21 @@ public class Application {
 
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {
+    	System.out.println(
+    			"#########################################\n" +
+    			"#########################################" +
+    			"#########################################" +
+    			"#########################################" +
+    			"#########################################\n\n\n" +
+    			
+    			"DATABASE URL: " + serviceConfig.getSpringDataSourceUrl() +
+    			
+    			"#########################################\n" +
+    			"#########################################" +
+    			"#########################################" +
+    			"#########################################" +
+    			"#########################################\n\n\n"
+		);
         JedisConnectionFactory jedisConnFactory = new JedisConnectionFactory();
         jedisConnFactory.setHostName( serviceConfig.getRedisServer());
         jedisConnFactory.setPort( serviceConfig.getRedisPort() );

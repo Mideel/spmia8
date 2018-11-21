@@ -14,8 +14,19 @@ public class ServiceConfig{
 
   @Value("${redis.port}")
   private String redisPort="";
+  
+  @Value("${spring.datasource.url}")
+  private String springDataSourceUrl;
 
-  public String getExampleProperty(){
+  public String getSpringDataSourceUrl() {
+	return springDataSourceUrl;
+}
+
+	public void setSpringDataSourceUrl(String springDataSourceUrl) {
+		this.springDataSourceUrl = springDataSourceUrl;
+	}
+
+public String getExampleProperty(){
     return exampleProperty;
   }
 
